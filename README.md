@@ -1,0 +1,1 @@
+baseline_train_x.log 是使用libero数据集自带的bc-rnn训练策略训练完成的记录文件。

@@ -1,0 +1,17 @@
+# 大目录：数据集、模型权重、第三方仓库
+LIBERO/
+huggingface/
+libero_lerobot/
+tmp/
+dp_baseline_s1/
+dp_smoke/
+.autodl/
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 系统文件
+.DS_Store

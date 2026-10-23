@@ -1,0 +1,695 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/core/utils.py:212: UserWarning: register_new_resolver() is deprecated and will be removed in a future release.
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver(
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/core/utils.py:218: UserWarning: register_new_resolver() is deprecated and will be removed in a future release.
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver(
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/core/utils.py:230: UserWarning: register_new_resolver() is deprecated and will be removed in a future release.
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver(
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/config_loader_impl.py:280: FutureWarning: Implicit conversion from Version to str at 'hydra.runtime.version_base' during assignment is deprecated; pass the declared type or use OmegaConf.update() for an existing path.
+  cfg.hydra.runtime.version_base = version.getbase()
+{ 'bddl_folder': None,
+  'benchmark_name': 'LIBERO_SPATIAL',
+  'data': { 'action_scale': 1.0,
+            'affine_translate': 4,
+            'data_modality': ['image', 'proprio'],
+            'frame_stack': 1,
+            'img_h': 128,
+            'img_w': 128,
+            'max_word_len': 25,
+            'num_kp': 64,
+            'obs': { 'modality': { 'depth': [],
+                                   'low_dim': [ 'gripper_states',
+                                                'joint_states'],
+                                   'rgb': [ 'agentview_rgb',
+                                            'eye_in_hand_rgb']}},
+            'obs_key_mapping': { 'agentview_rgb': 'agentview_image',
+                                 'eye_in_hand_rgb': 'robot0_eye_in_hand_image',
+                                 'gripper_states': 'robot0_gripper_qpos',
+                                 'joint_states': 'robot0_joint_pos'},
+            'seq_len': 10,
+            'shuffle_task': False,
+            'state_dim': None,
+            'task_group_size': 1,
+            'task_order_index': 0,
+            'train_dataset_ratio': 0.8,
+            'use_ee': False,
+            'use_eye_in_hand': True,
+            'use_gripper': True,
+            'use_joint': True},
+  'device': 'cuda',
+  'eval': { 'batch_size': 64,
+            'eval': True,
+            'eval_every': 5,
+            'load_path': '',
+            'max_steps': 600,
+            'n_eval': 10,
+            'num_procs': 4,
+            'num_workers': 4,
+            'save_sim_states': False,
+            'use_mp': True},
+  'folder': None,
+  'init_states_folder': None,
+  'lifelong': {'algo': 'Sequential'},
+  'load_previous_model': False,
+  'policy': { 'color_aug': { 'network': 'BatchWiseImgColorJitterAug',
+                             'network_kwargs': { 'brightness': 0.3,
+                                                 'contrast': 0.3,
+                                                 'epsilon': 0.1,
+                                                 'hue': 0.3,
+                                                 'input_shape': None,
+                                                 'saturation': 0.3}},
+              'image_embed_size': 64,
+              'image_encoder': { 'network': 'ResnetEncoder',
+                                 'network_kwargs': { 'freeze': False,
+                                                     'language_fusion': 'film',
+                                                     'no_stride': False,
+                                                     'pretrained': False,
+                                                     'remove_layer_num': 4}},
+              'language_encoder': { 'network': 'MLPEncoder',
+                                    'network_kwargs': { 'hidden_size': 128,
+                                                        'input_size': 768,
+                                                        'num_layers': 1,
+                                                        'output_size': 128}},
+              'policy_head': { 'loss_kwargs': {'loss_coef': 1.0},
+                               'network': 'GMMHead',
+                               'network_kwargs': { 'activation': 'softplus',
+                                                   'hidden_size': 1024,
+                                                   'low_eval_noise': False,
+                                                   'min_std': 0.0001,
+                                                   'num_layers': 2,
+                                                   'num_modes': 5}},
+              'policy_type': 'BCRNNPolicy',
+              'rnn_bidirectional': False,
+              'rnn_dropout': 0.0,
+              'rnn_hidden_size': 1024,
+              'rnn_num_layers': 2,
+              'text_embed_size': 32,
+              'translation_aug': { 'network': 'TranslationAug',
+                                   'network_kwargs': { 'input_shape': None,
+                                                       'translation': 8}}},
+  'pretrain': False,
+  'pretrain_model_path': '',
+  'seed': 1,
+  'task_embedding_format': 'bert',
+  'task_embedding_one_hot_offset': 1,
+  'train': { 'batch_size': 32,
+             'debug': False,
+             'grad_clip': 100.0,
+             'loss_scale': 1.0,
+             'n_epochs': 50,
+             'num_workers': 0,
+             'optimizer': { 'kwargs': { 'betas': [0.9, 0.999],
+                                        'lr': 0.0001,
+                                        'weight_decay': 0.0001},
+                            'name': 'torch.optim.AdamW'},
+             'resume': False,
+             'resume_path': '',
+             'scheduler': { 'kwargs': {'eta_min': 1e-05, 'last_epoch': -1},
+                            'name': 'torch.optim.lr_scheduler.CosineAnnealingLR'},
+             'use_augmentation': True},
+  'use_wandb': False,
+  'wandb_project': 'lifelong learning'}
+'Available algorithms:'
+{ 'agem': <class 'libero.lifelong.algos.agem.AGEM'>,
+  'er': <class 'libero.lifelong.algos.er.ER'>,
+  'ewc': <class 'libero.lifelong.algos.ewc.EWC'>,
+  'multitask': <class 'libero.lifelong.algos.multitask.Multitask'>,
+  'packnet': <class 'libero.lifelong.algos.packnet.PackNet'>,
+  'sequential': <class 'libero.lifelong.algos.base.Sequential'>,
+  'singletask': <class 'libero.lifelong.algos.single_task.SingleTask'>}
+'Available policies:'
+{ 'bcrnnpolicy': <class 'libero.lifelong.models.bc_rnn_policy.BCRNNPolicy'>,
+  'bctransformerpolicy': <class 'libero.lifelong.models.bc_transformer_policy.BCTransformerPolicy'>,
+  'bcviltpolicy': <class 'libero.lifelong.models.bc_vilt_policy.BCViLTPolicy'>}
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+============= Initialized Observation Utils with Obs Spec =============
+
+using obs modality: rgb with keys: ['eye_in_hand_rgb', 'agentview_rgb']
+using obs modality: depth with keys: []
+using obs modality: low_dim with keys: ['gripper_states', 'joint_states']
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1223.11it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1346.50it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1373.27it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1373.34it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1379.73it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1378.99it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1352.53it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1390.08it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1399.00it/s]
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_demo.hdf5
+SequenceDataset: loading dataset into memory...
+  0%|          | 0/50 [00:00<?, ?it/s]100%|██████████| 50/50 [00:00<00:00, 1399.19it/s]/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/robomimic/utils/dataset.py:516: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  pad_mask = pad_mask[:, None].astype(np.bool)
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/nn/modules/rnn.py:774: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters(). (Triggered internally at ../aten/src/ATen/native/cudnn/RNN.cpp:968.)
+  result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+
+/root/autodl-tmp/LIBERO/libero/libero/../datasets/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_demo.hdf5
+
+=================== Lifelong Benchmark Information  ===================
+ Name: libero_spatial
+ # Tasks: 10
+    - Task 1:
+        pick up the black bowl between the plate and the ramekin and place it on the plate
+    - Task 2:
+        pick up the black bowl next to the ramekin and place it on the plate
+    - Task 3:
+        pick up the black bowl from table center and place it on the plate
+    - Task 4:
+        pick up the black bowl on the cookie box and place it on the plate
+    - Task 5:
+        pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+    - Task 6:
+        pick up the black bowl on the ramekin and place it on the plate
+    - Task 7:
+        pick up the black bowl next to the cookie box and place it on the plate
+    - Task 8:
+        pick up the black bowl on the stove and place it on the plate
+    - Task 9:
+        pick up the black bowl next to the plate and place it on the plate
+    - Task 10:
+        pick up the black bowl on the wooden cabinet and place it on the plate
+ # demonstrations: (50) (50) (50) (50) (50) (50) (50) (50) (50) (50)
+ # sequences: (5068) (6707) (5882) (5052) (7479) (5796) (6312) (7111) (5963) (6880)
+=======================================================================
+
+[info] start lifelong learning with algo Sequential
+[info] policy has 13.5 GFLOPs and 19.1 MParams
+
+[info] start training on task 0
+[info] Epoch:   0 | train loss:  5.68 | time: 0.66
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 112.4 seconds
+[info] Epoch:   0 | succ: 0.00 ± 0.00 | best succ: 0.0 | succ. AoC 0.00 | time: 1.88
+[info] Epoch:   1 | train loss: -1.04 | time: 0.88
+[info] Epoch:   2 | train loss: -6.47 | time: 0.87
+[info] Epoch:   3 | train loss: -10.00 | time: 0.91
+[info] Epoch:   4 | train loss: -10.77 | time: 0.89
+[info] Epoch:   5 | train loss: -11.82 | time: 0.87
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 116.0 seconds
+[info] Epoch:   5 | succ: 0.00 ± 0.00 | best succ: 0.0 | succ. AoC 0.00 | time: 1.93
+[info] Epoch:   6 | train loss: -12.37 | time: 0.86
+[info] Epoch:   7 | train loss: -12.81 | time: 0.85
+[info] Epoch:   8 | train loss: -13.17 | time: 0.79
+[info] Epoch:   9 | train loss: -13.58 | time: 0.87
+[info] Epoch:  10 | train loss: -13.90 | time: 0.86
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 119.6 seconds
+[info] Epoch:  10 | succ: 0.00 ± 0.00 | best succ: 0.0 | succ. AoC 0.00 | time: 1.99
+[info] Epoch:  11 | train loss: -14.25 | time: 0.86
+[info] Epoch:  12 | train loss: -14.52 | time: 0.88
+[info] Epoch:  13 | train loss: -14.72 | time: 0.89
+[info] Epoch:  14 | train loss: -14.97 | time: 0.86
+[info] Epoch:  15 | train loss: -15.20 | time: 0.85
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 121.3 seconds
+[info] Epoch:  15 | succ: 0.20 ± 0.25 | best succ: 0.2 | succ. AoC 0.05 | time: 2.02
+[info] Epoch:  16 | train loss: -15.41 | time: 0.88
+[info] Epoch:  17 | train loss: -15.70 | time: 0.89
+[info] Epoch:  18 | train loss: -15.84 | time: 0.89
+[info] Epoch:  19 | train loss: -15.95 | time: 0.90
+[info] Epoch:  20 | train loss: -16.22 | time: 0.87
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 99.1 seconds
+[info] Epoch:  20 | succ: 0.60 ± 0.30 | best succ: 0.6 | succ. AoC 0.16 | time: 1.65
+[info] Epoch:  21 | train loss: -16.32 | time: 0.88
+[info] Epoch:  22 | train loss: -16.54 | time: 0.87
+[info] Epoch:  23 | train loss: -16.73 | time: 0.87
+[info] Epoch:  24 | train loss: -16.89 | time: 0.87
+[info] Epoch:  25 | train loss: -17.10 | time: 0.86
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 127.4 seconds
+[info] Epoch:  25 | succ: 0.50 ± 0.31 | best succ: 0.6 | succ. AoC 0.23 | time: 2.12
+[info] Epoch:  26 | train loss: -17.19 | time: 0.87
+[info] Epoch:  27 | train loss: -17.50 | time: 0.89
+[info] Epoch:  28 | train loss: -17.67 | time: 0.86
+[info] Epoch:  29 | train loss: -17.81 | time: 0.86
+[info] Epoch:  30 | train loss: -17.91 | time: 0.88
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 127.1 seconds
+[info] Epoch:  30 | succ: 0.60 ± 0.30 | best succ: 0.6 | succ. AoC 0.29 | time: 2.12
+[info] Epoch:  31 | train loss: -18.20 | time: 0.88
+[info] Epoch:  32 | train loss: -18.35 | time: 0.85
+[info] Epoch:  33 | train loss: -18.48 | time: 0.87
+[info] Epoch:  34 | train loss: -18.67 | time: 0.87
+[info] Epoch:  35 | train loss: -18.92 | time: 0.90
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 113.0 seconds
+[info] Epoch:  35 | succ: 0.70 ± 0.28 | best succ: 0.7 | succ. AoC 0.33 | time: 1.89
+[info] Epoch:  36 | train loss: -19.03 | time: 0.87
+[info] Epoch:  37 | train loss: -19.19 | time: 0.89
+[info] Epoch:  38 | train loss: -19.30 | time: 0.92
+[info] Epoch:  39 | train loss: -19.52 | time: 0.91
+[info] Epoch:  40 | train loss: -19.57 | time: 0.88
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 100.6 seconds
+[info] Epoch:  40 | succ: 0.50 ± 0.31 | best succ: 0.7 | succ. AoC 0.37 | time: 1.68
+[info] Epoch:  41 | train loss: -19.74 | time: 0.89
+[info] Epoch:  42 | train loss: -19.88 | time: 0.85
+[info] Epoch:  43 | train loss: -19.96 | time: 0.87
+[info] Epoch:  44 | train loss: -20.03 | time: 0.85
+[info] Epoch:  45 | train loss: -20.12 | time: 0.85
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 124.4 seconds
+[info] Epoch:  45 | succ: 0.40 ± 0.30 | best succ: 0.7 | succ. AoC 0.40 | time: 2.07
+[info] Epoch:  46 | train loss: -20.20 | time: 0.88
+[info] Epoch:  47 | train loss: -20.29 | time: 0.86
+[info] Epoch:  48 | train loss: -20.35 | time: 0.87
+[info] Epoch:  49 | train loss: -20.43 | time: 0.84
+[info] Epoch:  50 | train loss: -20.51 | time: 0.85
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/miniconda3/envs/panshi/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/root/miniconda3/envs/panshi/lib/python3.10/site-packages/thop/profile.py:12: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(torch.__version__) < LooseVersion("1.0.0"):
+[info] evaluate task 0 takes 108.8 seconds
+[info] Epoch:  50 | succ: 0.70 ± 0.28 | best succ: 0.7 | succ. AoC 0.43 | time: 1.81
+Error executing job with overrides: ['seed=1', 'benchmark_name=LIBERO_SPATIAL', 'policy=bc_rnn_policy', 'lifelong=base', 'train.n_epochs=50', 'train.num_workers=0', 'eval.num_procs=4', 'eval.n_eval=10']
+Traceback (most recent call last):
+  File "/root/autodl-tmp/LIBERO/libero/lifelong/main.py", line 272, in <module>
+    main()
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/main.py", line 90, in decorated_main
+    _run_hydra(
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/utils.py", line 389, in _run_hydra
+    _run_app(
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/utils.py", line 452, in _run_app
+    run_and_report(
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/utils.py", line 216, in run_and_report
+    raise ex
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/utils.py", line 213, in run_and_report
+    return func()
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/utils.py", line 453, in <lambda>
+    lambda: hydra.run(
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/root/autodl-tmp/LIBERO/libero/lifelong/main.py", line 228, in main
+    L = evaluate_loss(cfg, algo, benchmark, datasets[: i + 1])
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/autodl-tmp/LIBERO/libero/lifelong/metric.py", line 214, in evaluate_loss
+    for data in dataloader:
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 435, in __iter__
+    return self._get_iterator()
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 381, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1034, in __init__
+    w.start()
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/context.py", line 288, in _Popen
+    return Popen(process_obj)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 47, in _launch
+    reduction.dump(process_obj, fp)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+  File "/root/miniconda3/envs/panshi/lib/python3.10/site-packages/h5py/_hl/base.py", line 368, in __getnewargs__
+    raise TypeError("h5py objects cannot be pickled")
+TypeError: h5py objects cannot be pickled
