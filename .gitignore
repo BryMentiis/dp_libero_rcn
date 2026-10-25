@@ -29,6 +29,8 @@ baseline_train_2.log
 baseline_train_3.log
 baseline_train.log
 
+# 错误修复脚本
+test_pickle_fix.py
 # 第一次 dp 修改：dp_fwd
 dp_fwd_s1/
 dp_fwd*.log
@@ -36,10 +38,12 @@ dp_fwd*.log
 dp_smoke/
 dp_smoke.log
 dp_diffusion_smoke_ws.log
+smoke_test.log
 # 运行失败的 dp baseline
 dp_baseline_s1/
 dp_baseline.log
-
+dp_eval.log
+dp_eval_ckpts.log
 # 图片
 *.png
 lerobot-viz.log
@@ -48,6 +52,6 @@ gpu_monitor.log
 gpu_monitor.sh
 
 # 本人看的AI生成的文件
-model_modify,md
+model_modify.md
 model_modify_2.md
 index.html
