@@ -1,117 +1,0 @@
-INFO 2026-10-10 09:01:25 aset_viz.py:448 Loading dataset
-WARNING 2026-10-10 09:01:25 ort_utils.py:80 Could not load libtorchcodec. Likely causes:
-          1. FFmpeg is not properly installed in your environment. We support
-             versions 4, 5, 6, 7, and 8, and we attempt to load libtorchcodec
-             for each of those versions. Errors for versions not installed on
-             your system are expected; only the error for your installed FFmpeg
-             version is relevant. On Windows, ensure you've installed the
-             "full-shared" version which ships DLLs.
-          2. The PyTorch version (2.11.0+cu130) is not compatible with
-             this version of TorchCodec. Refer to the version compatibility
-             table:
-             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.
-          3. Another runtime dependency; see exceptions below.
-
-        The following exceptions were raised as we tried to load libtorchcodec:
-        
-[start of libtorchcodec loading traceback]
-FFmpeg version 8:
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1503, in load_library
-    ctypes.CDLL(path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/ctypes/__init__.py", line 379, in __init__
-    self._handle = _dlopen(self._name, mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: libavutil.so.60: cannot open shared object file: No such file or directory
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
-    torch.ops.load_library(core_library_path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1505, in load_library
-    raise OSError(f"Could not load this library: {path}") from e
-OSError: Could not load this library: /root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/libtorchcodec_core8.so
-
-FFmpeg version 7:
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1503, in load_library
-    ctypes.CDLL(path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/ctypes/__init__.py", line 379, in __init__
-    self._handle = _dlopen(self._name, mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: libavutil.so.59: cannot open shared object file: No such file or directory
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
-    torch.ops.load_library(core_library_path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1505, in load_library
-    raise OSError(f"Could not load this library: {path}") from e
-OSError: Could not load this library: /root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/libtorchcodec_core7.so
-
-FFmpeg version 6:
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1503, in load_library
-    ctypes.CDLL(path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/ctypes/__init__.py", line 379, in __init__
-    self._handle = _dlopen(self._name, mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: libavutil.so.58: cannot open shared object file: No such file or directory
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
-    torch.ops.load_library(core_library_path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1505, in load_library
-    raise OSError(f"Could not load this library: {path}") from e
-OSError: Could not load this library: /root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/libtorchcodec_core6.so
-
-FFmpeg version 5:
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1503, in load_library
-    ctypes.CDLL(path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/ctypes/__init__.py", line 379, in __init__
-    self._handle = _dlopen(self._name, mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: libavutil.so.57: cannot open shared object file: No such file or directory
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
-    torch.ops.load_library(core_library_path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1505, in load_library
-    raise OSError(f"Could not load this library: {path}") from e
-OSError: Could not load this library: /root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/libtorchcodec_core5.so
-
-FFmpeg version 4:
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1503, in load_library
-    ctypes.CDLL(path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/ctypes/__init__.py", line 379, in __init__
-    self._handle = _dlopen(self._name, mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: libavdevice.so.58: cannot open shared object file: No such file or directory
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
-    torch.ops.load_library(core_library_path)
-  File "/root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torch/_ops.py", line 1505, in load_library
-    raise OSError(f"Could not load this library: {path}") from e
-OSError: Could not load this library: /root/miniconda3/envs/lerobot/lib/python3.12/site-packages/torchcodec/libtorchcodec_core4.so
-[end of libtorchcodec loading traceback].
-'torchcodec' is installed but cannot be loaded (see the error above). Falling back to 'pyav' as a default decoder.
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 1174.14it/s]
-WARNING 2026-10-10 09:01:26 ts/utils.py:191 Unknown fields in DatasetInfo: ['files_size_in_mb']. These will be ignored.
-INFO 2026-10-10 09:01:26 aset_viz.py:197 Loading dataloader
-INFO 2026-10-10 09:01:26 aset_viz.py:204 Starting Rerun
-INFO 2026-10-10 09:01:26 aset_viz.py:225 Connect to a Rerun Server: rerun rerun+http://IP:9877/proxy
-INFO 2026-10-10 09:01:26 aset_viz.py:232 Logging to Rerun
-  0%|          | 0/13 [00:00<?, ?it/s]  8%|▊         | 1/13 [00:01<00:16,  1.39s/it] 15%|█▌        | 2/13 [00:01<00:08,  1.31it/s] 23%|██▎       | 3/13 [00:02<00:05,  1.68it/s] 31%|███       | 4/13 [00:02<00:04,  2.10it/s] 38%|███▊      | 5/13 [00:02<00:03,  2.23it/s] 46%|████▌     | 6/13 [00:03<00:03,  2.32it/s] 54%|█████▍    | 7/13 [00:03<00:02,  2.51it/s] 62%|██████▏   | 8/13 [00:03<00:01,  2.69it/s] 69%|██████▉   | 9/13 [00:04<00:01,  2.97it/s] 77%|███████▋  | 10/13 [00:04<00:00,  3.33it/s] 85%|████████▍ | 11/13 [00:04<00:00,  3.70it/s] 92%|█████████▏| 12/13 [00:04<00:00,  4.02it/s]100%|██████████| 13/13 [00:04<00:00,  4.83it/s]100%|██████████| 13/13 [00:04<00:00,  2.67it/s]
-2026-10-10T01:46:17.256484Z  WARN re_web_viewer_server: 404 path: /rerun.sdk_comms.v1alpha1.MessageProxyService/ReadMessages
-2026-10-10T02:59:10.639373Z  WARN re_web_viewer_server: 404 path: /rerun.sdk_comms.v1alpha1.MessageProxyService/ReadMessages

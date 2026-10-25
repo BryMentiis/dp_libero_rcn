@@ -1,174 +1,0 @@
-
-libgomp: Invalid value for environment variable OMP_NUM_THREADS
-WARNING:lerobot.configs.policies:Device 'None' is not available. Switching to 'cuda'.
-INFO 2026-10-21 23:16:18 ot_train.py:272 {'batch_size': 8,
- 'checkpoint_path': None,
- 'cudnn_deterministic': False,
- 'dataloader_multiprocessing_context': 'spawn',
- 'dataset': {'depth_output_unit': 'mm',
-             'episodes': None,
-             'eval_split': 0.0,
-             'image_transforms': {'enable': False,
-                                  'max_num_transforms': 3,
-                                  'random_order': False,
-                                  'tfs': {'affine': {'kwargs': {'degrees': [-5.0,
-                                                                            5.0],
-                                                                'translate': [0.05,
-                                                                              0.05]},
-                                                     'type': 'RandomAffine',
-                                                     'weight': 1.0},
-                                          'brightness': {'kwargs': {'brightness': [0.8,
-                                                                                   1.2]},
-                                                         'type': 'ColorJitter',
-                                                         'weight': 1.0},
-                                          'contrast': {'kwargs': {'contrast': [0.8,
-                                                                               1.2]},
-                                                       'type': 'ColorJitter',
-                                                       'weight': 1.0},
-                                          'hue': {'kwargs': {'hue': [-0.05,
-                                                                     0.05]},
-                                                  'type': 'ColorJitter',
-                                                  'weight': 1.0},
-                                          'saturation': {'kwargs': {'saturation': [0.5,
-                                                                                   1.5]},
-                                                         'type': 'ColorJitter',
-                                                         'weight': 1.0},
-                                          'sharpness': {'kwargs': {'sharpness': [0.5,
-                                                                                 1.5]},
-                                                        'type': 'SharpnessJitter',
-                                                        'weight': 1.0}}},
-             'repo_id': 'nvidia/LIBERO_LeRobot_v3',
-             'repo_type': 'dataset',
-             'return_uint8': False,
-             'revision': None,
-             'root': '/root/autodl-tmp/libero_lerobot/libero_spatial',
-             'streaming': False,
-             'use_imagenet_stats': True,
-             'video_backend': 'torchcodec'},
- 'env': None,
- 'env_eval_freq': 20000,
- 'eval': {'batch_size': 50,
-          'n_episodes': 50,
-          'recording': False,
-          'recording_private': False,
-          'recording_repo_id': None,
-          'use_async_envs': True},
- 'eval_steps': 0,
- 'job': {'detach': False,
-         'image': 'huggingface/lerobot-gpu:latest',
-         'tags': [],
-         'target': None,
-         'timeout': '2d'},
- 'job_name': 'diffusion',
- 'log_freq': 200,
- 'max_eval_samples': 0,
- 'num_workers': 4,
- 'optimizer': {'betas': [0.95, 0.999],
-               'eps': 1e-08,
-               'grad_clip_norm': 10.0,
-               'lr': 0.0001,
-               'type': 'adam',
-               'weight_decay': 1e-06},
- 'output_dir': '/root/autodl-tmp/dp_smoke',
- 'peft': None,
- 'persistent_workers': True,
- 'policy': {'beta_end': 0.02,
-            'beta_schedule': 'squaredcos_cap_v2',
-            'beta_start': 0.0001,
-            'clip_sample': True,
-            'clip_sample_range': 1.0,
-            'compile_mode': 'reduce-overhead',
-            'compile_model': False,
-            'crop_is_random': True,
-            'crop_ratio': 1.0,
-            'crop_shape': None,
-            'device': 'cuda',
-            'diffusion_step_embed_dim': 128,
-            'do_mask_loss_for_padding': False,
-            'down_dims': [512, 1024, 2048],
-            'drop_n_last_frames': 7,
-            'gradient_checkpointing': False,
-            'horizon': 64,
-            'input_features': {},
-            'kernel_size': 5,
-            'license': None,
-            'n_action_steps': 32,
-            'n_groups': 8,
-            'n_obs_steps': 2,
-            'noise_scheduler_type': 'DDPM',
-            'normalization_mapping': {'ACTION': <NormalizationMode.MIN_MAX: 'MIN_MAX'>,
-                                      'STATE': <NormalizationMode.MIN_MAX: 'MIN_MAX'>,
-                                      'VISUAL': <NormalizationMode.MEAN_STD: 'MEAN_STD'>},
-            'num_inference_steps': None,
-            'num_train_timesteps': 100,
-            'optimizer_betas': [0.95, 0.999],
-            'optimizer_eps': 1e-08,
-            'optimizer_lr': 0.0001,
-            'optimizer_weight_decay': 1e-06,
-            'output_features': {},
-            'prediction_type': 'epsilon',
-            'pretrained_backbone_weights': 'ResNet18_Weights.IMAGENET1K_V1',
-            'pretrained_path': None,
-            'pretrained_revision': None,
-            'private': None,
-            'push_to_hub': False,
-            'repo_id': None,
-            'resize_shape': None,
-            'scheduler_name': 'cosine',
-            'scheduler_warmup_steps': 500,
-            'spatial_softmax_num_keypoints': 32,
-            'tags': None,
-            'type': 'diffusion',
-            'use_amp': False,
-            'use_film_scale_modulation': True,
-            'use_group_norm': False,
-            'use_peft': False,
-            'use_separate_rgb_encoder_per_camera': True,
-            'vision_backbone': 'resnet18'},
- 'prefetch_factor': 4,
- 'rename_map': {},
- 'resume': False,
- 'reward_model': None,
- 'sample_weighting': None,
- 'save_checkpoint': True,
- 'save_checkpoint_to_hub': False,
- 'save_freq': 200,
- 'scheduler': {'name': 'cosine', 'num_warmup_steps': 500, 'type': 'diffuser'},
- 'seed': 1000,
- 'steps': 200,
- 'tolerance_s': 0.0001,
- 'use_policy_training_preset': True,
- 'wandb': {'add_tags': True,
-           'disable_artifact': False,
-           'enable': False,
-           'entity': None,
-           'mode': None,
-           'notes': None,
-           'project': 'lerobot',
-           'run_id': None}}
-INFO 2026-10-21 23:16:18 ot_train.py:280 Logs will be saved locally.
-INFO 2026-10-21 23:16:18 ot_train.py:298 Creating dataset
-WARNING 2026-10-21 23:16:18 ts/utils.py:191 Unknown fields in DatasetInfo: ['data_files']. These will be ignored.
-WARNING 2026-10-21 23:16:18 ts/utils.py:191 Unknown fields in DatasetInfo: ['data_files']. These will be ignored.
-INFO 2026-10-21 23:16:18 ot_train.py:324 Creating policy
-INFO 2026-10-21 23:16:20 ot_train.py:402 Creating optimizer and scheduler
-INFO 2026-10-21 23:16:20 ot_train.py:434 Output dir: /root/autodl-tmp/dp_smoke
-INFO 2026-10-21 23:16:20 ot_train.py:441 cfg.steps=200 (200)
-INFO 2026-10-21 23:16:20 ot_train.py:442 dataset.num_frames=52970 (53K)
-INFO 2026-10-21 23:16:20 ot_train.py:443 dataset.num_episodes=432
-INFO 2026-10-21 23:16:20 ot_train.py:446 Effective batch size: 8 x 1 = 8
-INFO 2026-10-21 23:16:20 ot_train.py:447 num_learnable_params=277938119 (278M)
-INFO 2026-10-21 23:16:20 ot_train.py:448 num_total_params=277938119 (278M)
-Training:   0%|          | 0/200 [00:00<?, ?step/s]INFO 2026-10-21 23:16:20 ot_train.py:597 Start offline training on a fixed dataset, with effective batch size: 8
-
-libgomp: Invalid value for environment variable OMP_NUM_THREADS
-
-libgomp: Invalid value for environment variable OMP_NUM_THREADS
-
-libgomp: Invalid value for environment variable OMP_NUM_THREADS
-
-libgomp: Invalid value for environment variable OMP_NUM_THREADS
-Training:   0%|          | 1/200 [00:14<48:37, 14.66s/step]Training:   2%|▏         | 3/200 [00:14<12:38,  3.85s/step]Training:   2%|▎         | 5/200 [00:14<06:11,  1.90s/step]Training:   4%|▎         | 7/200 [00:15<03:36,  1.12s/step]Training:   4%|▍         | 9/200 [00:15<02:18,  1.38step/s]Training:   6%|▌         | 11/200 [00:15<01:33,  2.03step/s]Training:   6%|▋         | 13/200 [00:15<01:05,  2.86step/s]Training:   8%|▊         | 15/200 [00:15<00:47,  3.89step/s]Training:   8%|▊         | 17/200 [00:15<00:35,  5.10step/s]Training:  10%|▉         | 19/200 [00:15<00:28,  6.46step/s]Training:  10%|█         | 21/200 [00:15<00:22,  7.89step/s]Training:  12%|█▏        | 23/200 [00:16<00:18,  9.32step/s]Training:  12%|█▎        | 25/200 [00:16<00:16, 10.67step/s]Training:  14%|█▎        | 27/200 [00:16<00:14, 11.86step/s]Training:  14%|█▍        | 29/200 [00:16<00:13, 12.79step/s]Training:  16%|█▌        | 31/200 [00:16<00:12, 13.39step/s]Training:  16%|█▋        | 33/200 [00:16<00:12, 13.60step/s]Training:  18%|█▊        | 35/200 [00:16<00:11, 14.02step/s]Training:  18%|█▊        | 37/200 [00:16<00:11, 14.23step/s]Training:  20%|█▉        | 39/200 [00:17<00:11, 14.37step/s]Training:  20%|██        | 41/200 [00:17<00:10, 14.49step/s]Training:  22%|██▏       | 43/200 [00:17<00:10, 14.51step/s]Training:  22%|██▎       | 45/200 [00:17<00:10, 14.64step/s]Training:  24%|██▎       | 47/200 [00:17<00:10, 14.73step/s]Training:  24%|██▍       | 49/200 [00:17<00:10, 14.76step/s]Training:  26%|██▌       | 51/200 [00:17<00:10, 14.81step/s]Training:  26%|██▋       | 53/200 [00:18<00:09, 14.84step/s]Training:  28%|██▊       | 55/200 [00:18<00:09, 14.87step/s]Training:  28%|██▊       | 57/200 [00:18<00:09, 14.89step/s]Training:  30%|██▉       | 59/200 [00:18<00:09, 14.87step/s]Training:  30%|███       | 61/200 [00:18<00:09, 14.87step/s]Training:  32%|███▏      | 63/200 [00:18<00:09, 14.85step/s]Training:  32%|███▎      | 65/200 [00:18<00:09, 14.89step/s]Training:  34%|███▎      | 67/200 [00:19<00:08, 14.82step/s]Training:  34%|███▍      | 69/200 [00:19<00:08, 14.91step/s]Training:  36%|███▌      | 71/200 [00:19<00:08, 14.89step/s]Training:  36%|███▋      | 73/200 [00:19<00:08, 14.93step/s]Training:  38%|███▊      | 75/200 [00:19<00:08, 14.92step/s]Training:  38%|███▊      | 77/200 [00:19<00:08, 14.91step/s]Training:  40%|███▉      | 79/200 [00:19<00:08, 14.86step/s]Training:  40%|████      | 81/200 [00:19<00:08, 14.85step/s]Training:  42%|████▏     | 83/200 [00:20<00:07, 14.67step/s]Training:  42%|████▎     | 85/200 [00:20<00:07, 14.73step/s]Training:  44%|████▎     | 87/200 [00:20<00:07, 14.76step/s]Training:  44%|████▍     | 89/200 [00:20<00:07, 14.82step/s]Training:  46%|████▌     | 91/200 [00:20<00:07, 14.88step/s]Training:  46%|████▋     | 93/200 [00:20<00:07, 14.86step/s]Training:  48%|████▊     | 95/200 [00:20<00:07, 14.88step/s]Training:  48%|████▊     | 97/200 [00:21<00:06, 14.86step/s]Training:  50%|████▉     | 99/200 [00:21<00:06, 14.88step/s]Training:  50%|█████     | 101/200 [00:21<00:06, 14.92step/s]Training:  52%|█████▏    | 103/200 [00:21<00:06, 14.89step/s]Training:  52%|█████▎    | 105/200 [00:21<00:06, 14.85step/s]Training:  54%|█████▎    | 107/200 [00:21<00:06, 14.85step/s]Training:  55%|█████▍    | 109/200 [00:21<00:06, 14.85step/s]Training:  56%|█████▌    | 111/200 [00:21<00:06, 14.73step/s]Training:  56%|█████▋    | 113/200 [00:22<00:05, 14.77step/s]Training:  57%|█████▊    | 115/200 [00:22<00:05, 14.73step/s]Training:  58%|█████▊    | 117/200 [00:22<00:05, 14.72step/s]Training:  60%|█████▉    | 119/200 [00:22<00:05, 14.74step/s]Training:  60%|██████    | 121/200 [00:22<00:05, 14.76step/s]Training:  62%|██████▏   | 123/200 [00:22<00:05, 14.79step/s]Training:  62%|██████▎   | 125/200 [00:22<00:05, 14.82step/s]Training:  64%|██████▎   | 127/200 [00:23<00:04, 14.78step/s]Training:  64%|██████▍   | 129/200 [00:23<00:04, 14.82step/s]Training:  66%|██████▌   | 131/200 [00:23<00:04, 14.89step/s]Training:  66%|██████▋   | 133/200 [00:23<00:04, 14.92step/s]Training:  68%|██████▊   | 135/200 [00:23<00:04, 14.91step/s]Training:  68%|██████▊   | 137/200 [00:23<00:04, 14.90step/s]Training:  70%|██████▉   | 139/200 [00:23<00:04, 14.78step/s]Training:  70%|███████   | 141/200 [00:23<00:03, 14.82step/s]Training:  72%|███████▏  | 143/200 [00:24<00:03, 14.79step/s]Training:  72%|███████▎  | 145/200 [00:24<00:03, 14.84step/s]Training:  74%|███████▎  | 147/200 [00:24<00:03, 14.86step/s]Training:  74%|███████▍  | 149/200 [00:24<00:03, 14.91step/s]Training:  76%|███████▌  | 151/200 [00:24<00:03, 14.94step/s]Training:  76%|███████▋  | 153/200 [00:24<00:03, 14.91step/s]Training:  78%|███████▊  | 155/200 [00:24<00:03, 14.81step/s]Training:  78%|███████▊  | 157/200 [00:25<00:02, 14.86step/s]Training:  80%|███████▉  | 159/200 [00:25<00:02, 14.84step/s]Training:  80%|████████  | 161/200 [00:25<00:02, 14.84step/s]Training:  82%|████████▏ | 163/200 [00:25<00:02, 14.77step/s]Training:  82%|████████▎ | 165/200 [00:25<00:02, 14.76step/s]Training:  84%|████████▎ | 167/200 [00:25<00:02, 14.82step/s]Training:  84%|████████▍ | 169/200 [00:25<00:02, 14.81step/s]Training:  86%|████████▌ | 171/200 [00:26<00:01, 14.83step/s]Training:  86%|████████▋ | 173/200 [00:26<00:01, 14.86step/s]Training:  88%|████████▊ | 175/200 [00:26<00:01, 14.88step/s]Training:  88%|████████▊ | 177/200 [00:26<00:01, 14.89step/s]Training:  90%|████████▉ | 179/200 [00:26<00:01, 14.94step/s]Training:  90%|█████████ | 181/200 [00:26<00:01, 14.95step/s]Training:  92%|█████████▏| 183/200 [00:26<00:01, 14.92step/s]Training:  92%|█████████▎| 185/200 [00:26<00:01, 14.96step/s]Training:  94%|█████████▎| 187/200 [00:27<00:00, 14.93step/s]Training:  94%|█████████▍| 189/200 [00:27<00:00, 14.92step/s]Training:  96%|█████████▌| 191/200 [00:27<00:00, 14.90step/s]Training:  96%|█████████▋| 193/200 [00:27<00:00, 14.88step/s]Training:  98%|█████████▊| 195/200 [00:27<00:00, 14.81step/s]Training:  98%|█████████▊| 197/200 [00:27<00:00, 14.80step/s]Training: 100%|█████████▉| 199/200 [00:27<00:00, 14.81step/s]INFO 2026-10-21 23:16:48 ot_train.py:641 step:200 smpl:2K ep:13 epch:0.03 loss:0.672 grdn:4.179 lr:2.0e-05 updt_s:0.102 data_s:0.037 smp/s:57 mem_gb:5.34
-INFO 2026-10-21 23:16:48 ot_train.py:687 Checkpoint policy after step 200
-Training: 100%|██████████| 200/200 [00:31<00:00,  6.34step/s]
-INFO 2026-10-21 23:16:52 ot_train.py:770 End of training
