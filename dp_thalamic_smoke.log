@@ -1,0 +1,176 @@
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+WARNING:lerobot.configs.policies:Device 'None' is not available. Switching to 'cuda'.
+INFO 2026-10-24 23:16:59 ot_train.py:272 {'batch_size': 8,
+ 'checkpoint_path': None,
+ 'cudnn_deterministic': False,
+ 'dataloader_multiprocessing_context': 'spawn',
+ 'dataset': {'depth_output_unit': 'mm',
+             'episodes': None,
+             'eval_split': 0.0,
+             'image_transforms': {'enable': False,
+                                  'max_num_transforms': 3,
+                                  'random_order': False,
+                                  'tfs': {'affine': {'kwargs': {'degrees': [-5.0,
+                                                                            5.0],
+                                                                'translate': [0.05,
+                                                                              0.05]},
+                                                     'type': 'RandomAffine',
+                                                     'weight': 1.0},
+                                          'brightness': {'kwargs': {'brightness': [0.8,
+                                                                                   1.2]},
+                                                         'type': 'ColorJitter',
+                                                         'weight': 1.0},
+                                          'contrast': {'kwargs': {'contrast': [0.8,
+                                                                               1.2]},
+                                                       'type': 'ColorJitter',
+                                                       'weight': 1.0},
+                                          'hue': {'kwargs': {'hue': [-0.05,
+                                                                     0.05]},
+                                                  'type': 'ColorJitter',
+                                                  'weight': 1.0},
+                                          'saturation': {'kwargs': {'saturation': [0.5,
+                                                                                   1.5]},
+                                                         'type': 'ColorJitter',
+                                                         'weight': 1.0},
+                                          'sharpness': {'kwargs': {'sharpness': [0.5,
+                                                                                 1.5]},
+                                                        'type': 'SharpnessJitter',
+                                                        'weight': 1.0}}},
+             'repo_id': 'nvidia/LIBERO_LeRobot_v3',
+             'repo_type': 'dataset',
+             'return_uint8': False,
+             'revision': None,
+             'root': '/root/autodl-tmp/libero_lerobot/libero_spatial',
+             'streaming': False,
+             'use_imagenet_stats': True,
+             'video_backend': 'torchcodec'},
+ 'env': None,
+ 'env_eval_freq': 20000,
+ 'eval': {'batch_size': 50,
+          'n_episodes': 50,
+          'recording': False,
+          'recording_private': False,
+          'recording_repo_id': None,
+          'use_async_envs': True},
+ 'eval_steps': 0,
+ 'job': {'detach': False,
+         'image': 'huggingface/lerobot-gpu:latest',
+         'tags': [],
+         'target': None,
+         'timeout': '2d'},
+ 'job_name': 'dp_thalamic',
+ 'log_freq': 200,
+ 'max_eval_samples': 0,
+ 'num_workers': 4,
+ 'optimizer': {'betas': [0.95, 0.999],
+               'eps': 1e-08,
+               'grad_clip_norm': 10.0,
+               'lr': 0.0001,
+               'type': 'adam',
+               'weight_decay': 1e-06},
+ 'output_dir': '/root/autodl-tmp/dp_thalamic_smoke',
+ 'peft': None,
+ 'persistent_workers': True,
+ 'policy': {'beta_end': 0.02,
+            'beta_schedule': 'squaredcos_cap_v2',
+            'beta_start': 0.0001,
+            'clip_sample': True,
+            'clip_sample_range': 1.0,
+            'compile_mode': 'reduce-overhead',
+            'compile_model': False,
+            'crop_is_random': True,
+            'crop_ratio': 1.0,
+            'crop_shape': None,
+            'device': 'cuda',
+            'diffusion_step_embed_dim': 128,
+            'do_mask_loss_for_padding': False,
+            'down_dims': [512, 1024, 2048],
+            'drop_n_last_frames': 7,
+            'gate_min_rank': 16,
+            'gate_rank_ratio': 16,
+            'gradient_checkpointing': False,
+            'horizon': 64,
+            'input_features': {},
+            'kernel_size': 5,
+            'license': None,
+            'n_action_steps': 32,
+            'n_groups': 8,
+            'n_obs_steps': 2,
+            'noise_scheduler_type': 'DDPM',
+            'normalization_mapping': {'ACTION': <NormalizationMode.MIN_MAX: 'MIN_MAX'>,
+                                      'STATE': <NormalizationMode.MIN_MAX: 'MIN_MAX'>,
+                                      'VISUAL': <NormalizationMode.MEAN_STD: 'MEAN_STD'>},
+            'num_inference_steps': None,
+            'num_train_timesteps': 100,
+            'optimizer_betas': [0.95, 0.999],
+            'optimizer_eps': 1e-08,
+            'optimizer_lr': 0.0001,
+            'optimizer_weight_decay': 1e-06,
+            'output_features': {},
+            'prediction_type': 'epsilon',
+            'pretrained_backbone_weights': 'ResNet18_Weights.IMAGENET1K_V1',
+            'pretrained_path': None,
+            'pretrained_revision': None,
+            'private': None,
+            'push_to_hub': False,
+            'repo_id': None,
+            'resize_shape': None,
+            'scheduler_name': 'cosine',
+            'scheduler_warmup_steps': 500,
+            'spatial_softmax_num_keypoints': 32,
+            'tags': None,
+            'type': 'dp_thalamic',
+            'use_amp': False,
+            'use_film_scale_modulation': True,
+            'use_group_norm': False,
+            'use_peft': False,
+            'use_separate_rgb_encoder_per_camera': True,
+            'use_topdown_gate': True,
+            'vision_backbone': 'resnet18'},
+ 'prefetch_factor': 4,
+ 'rename_map': {},
+ 'resume': False,
+ 'reward_model': None,
+ 'sample_weighting': None,
+ 'save_checkpoint': True,
+ 'save_checkpoint_to_hub': False,
+ 'save_freq': 20,
+ 'scheduler': {'name': 'cosine', 'num_warmup_steps': 500, 'type': 'diffuser'},
+ 'seed': 1000,
+ 'steps': 20,
+ 'tolerance_s': 0.0001,
+ 'use_policy_training_preset': True,
+ 'wandb': {'add_tags': True,
+           'disable_artifact': False,
+           'enable': False,
+           'entity': None,
+           'mode': None,
+           'notes': None,
+           'project': 'lerobot',
+           'run_id': None}}
+INFO 2026-10-24 23:16:59 ot_train.py:280 Logs will be saved locally.
+INFO 2026-10-24 23:16:59 ot_train.py:298 Creating dataset
+WARNING 2026-10-24 23:16:59 ts/utils.py:191 Unknown fields in DatasetInfo: ['data_files']. These will be ignored.
+WARNING 2026-10-24 23:16:59 ts/utils.py:191 Unknown fields in DatasetInfo: ['data_files']. These will be ignored.
+INFO 2026-10-24 23:16:59 ot_train.py:324 Creating policy
+INFO 2026-10-24 23:17:02 ot_train.py:402 Creating optimizer and scheduler
+INFO 2026-10-24 23:17:02 ot_train.py:434 Output dir: /root/autodl-tmp/dp_thalamic_smoke
+INFO 2026-10-24 23:17:02 ot_train.py:441 cfg.steps=20 (20)
+INFO 2026-10-24 23:17:02 ot_train.py:442 dataset.num_frames=52970 (53K)
+INFO 2026-10-24 23:17:02 ot_train.py:443 dataset.num_episodes=432
+INFO 2026-10-24 23:17:02 ot_train.py:446 Effective batch size: 8 x 1 = 8
+INFO 2026-10-24 23:17:02 ot_train.py:447 num_learnable_params=278596745 (279M)
+INFO 2026-10-24 23:17:02 ot_train.py:448 num_total_params=278596745 (279M)
+Training:   0%|          | 0/20 [00:00<?, ?step/s]INFO 2026-10-24 23:17:02 ot_train.py:597 Start offline training on a fixed dataset, with effective batch size: 8
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+Training:   5%|▌         | 1/20 [00:13<04:16, 13.48s/step]Training:  10%|█         | 2/20 [00:13<01:41,  5.63s/step]Training:  15%|█▌        | 3/20 [00:13<00:52,  3.11s/step]Training:  20%|██        | 4/20 [00:13<00:31,  1.94s/step]Training:  25%|██▌       | 5/20 [00:14<00:19,  1.29s/step]Training:  30%|███       | 6/20 [00:14<00:12,  1.11step/s]Training:  35%|███▌      | 7/20 [00:14<00:08,  1.52step/s]Training:  40%|████      | 8/20 [00:14<00:05,  2.02step/s]Training:  45%|████▌     | 9/20 [00:14<00:04,  2.57step/s]Training:  50%|█████     | 10/20 [00:14<00:03,  3.24step/s]Training:  55%|█████▌    | 11/20 [00:14<00:02,  3.94step/s]Training:  60%|██████    | 12/20 [00:15<00:01,  4.48step/s]Training:  65%|██████▌   | 13/20 [00:15<00:01,  5.16step/s]Training:  70%|███████   | 14/20 [00:15<00:01,  5.51step/s]Training:  75%|███████▌  | 15/20 [00:15<00:00,  5.78step/s]Training:  80%|████████  | 16/20 [00:15<00:00,  6.06step/s]Training:  85%|████████▌ | 17/20 [00:15<00:00,  6.19step/s]Training:  90%|█████████ | 18/20 [00:15<00:00,  6.63step/s]Training:  95%|█████████▌| 19/20 [00:16<00:00,  6.61step/s]Training: 100%|██████████| 20/20 [00:16<00:00,  6.59step/s]INFO 2026-10-24 23:17:18 ot_train.py:687 Checkpoint policy after step 20
+Training: 100%|██████████| 20/20 [00:20<00:00,  1.00s/step]
+INFO 2026-10-24 23:17:22 ot_train.py:770 End of training
